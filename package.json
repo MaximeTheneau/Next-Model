@@ -1,12 +1,14 @@
 {
-  "name": "my-app",
+  "name": "next_model",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
+
   },
   "dependencies": {
     "next": "13.0.0",
@@ -15,6 +17,9 @@
   },
   "devDependencies": {
     "eslint": "8.26.0",
-    "eslint-config-next": "13.0.0"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "13.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "sass": "^1.57.1"
   }
 }
