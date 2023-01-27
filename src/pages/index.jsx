@@ -1,6 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import imageLoader from '../utils/imageLoader';
+
+
+// export function cloudinaryLoader({ src, width, quality }) {
+//   https://res.cloudinary.com/dsn2zwbis/image/upload/v1674737282/cld-sample-5.jpg
+//   return `https://res.cloudinary.com/${process.env.CLOUDINARY_URL}/image/upload/responsivebreakpoints/${src},w_${width}.jpg`;
+// }
 
 export default function Home() {
   return (
@@ -12,6 +19,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+
         <h1 className={styles.title}>
           Welcome to
           {' '}
@@ -55,6 +63,20 @@ export default function Home() {
             </p>
           </a>
         </div>
+
+
+        <Image
+          src={"cld-sample.webp"}
+          alt="Vercel Logo" 
+          quality={100}
+          width={1870}
+          height={1250}
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          style={{borderRadius: '50%'}}
+          loader={imageLoader}
+        />
       </main>
 
       <footer className={styles.footer}>
@@ -66,7 +88,6 @@ export default function Home() {
           Powered by
           {' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
